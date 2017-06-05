@@ -1,0 +1,19 @@
+{
+  "name": "setup",
+  "version": "1.0.0",
+  "description": "## Use `npm init` for new project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alextanhongpin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.15.3",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "nock": "9.0.13"
+  },
+  "keywords": []
+}
