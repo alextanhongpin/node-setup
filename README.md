@@ -1,6 +1,5 @@
 # NPM Tutorial
 
-
 ## Check NPM version
 
 Check your npm version with the command `npm -v`. 
@@ -62,6 +61,14 @@ In `package.json`:
 ```
 
 With this, you can just run `npm start` instead of typing `node index.js`. Useful when the commands gets longer.
+
+## dependencies vs dev-dependencies
+
+A module installed using `--save` or `-S` flags is saved as `dependencies` in your package.json. Your nodejs app is dependent on it - it will not work without this dependencies installed.
+
+A module installed using `--save-dev` or `-D` flags is saved as `dev-depedencies` in your package.json. Your nodejs app is not dependent on it, but your development environment is dependent on it.
+
+Testing/mocking libraries such as `mocha`, `nock` will be in dev-dependencies. Since your app does not depend on them, it should be excluded when you deploy to production.
 
 ## Remove dev-dependencies before deploying to production
 
