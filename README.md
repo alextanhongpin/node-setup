@@ -1,16 +1,21 @@
-# NPM Tutorial
+# NPM 101
 
-## Check NPM version
+Bullet points that will help you get started with npm :metal:.
 
-Check your npm version with the command `npm -v`. 
-
-The latest version at the moment is `5.0.2`. Upgrade to the latest version with the command `$ npm i -g npm` (osx).
-
-## Use `npm init` for new project
-
-`npm init` will interactively create a package.json for your project. 
-
-`npm init --yes` skips the interactive mode and just create a package.json.
++ `npm -v` prints the version of npm installed on your machine
++ The latest version at the time of writing is `5.0.2`
++ Update npm on your osx machine with `$ npm i -g npm`
++ Always init a new project with `npm init`
++ `npm init` will interactively create a package.json for your project. 
++ `npm init --yes` skips the interactive mode and just create a package.json.
++ Lock down dependency versions for publication with `npm shrinkwrap`
++ Set default config with `npm config` (see below)
++ Use .npmrc file for setting project config (see below)
++ Use lifecycle scripts like `npm start`, `npm test`, `npm build`, `npm deploy`
++ Always save when installing module 
++ Understand the difference between dependencies vs dev-dependencies (see below)
++ Remove dev-dependencies before deploying to production
++ Lastly, don't commit your node_modules
 
 
 ## Set default config with `npm config`
@@ -32,9 +37,6 @@ $ npm config list
 $ npm config edit
 ```
 
-## Lock down dependency versions for publication
-
-`npm shrinkwrap` will create a npm-shrinkwrap.json.
 
 
 ## Use .npmrc for setting project config
@@ -64,9 +66,9 @@ With this, you can just run `npm start` instead of typing `node index.js`. Usefu
 
 ## dependencies vs dev-dependencies
 
-A module installed using `--save` or `-S` flags is saved as `dependencies` in your package.json. Your nodejs app is dependent on it - it will not work without this dependencies installed.
+A module installed using `-save` or `-S` flags is saved as `dependencies` in your package.json. Your nodejs app is dependent on it - it will not work without this dependencies installed.
 
-A module installed using `--save-dev` or `-D` flags is saved as `dev-depedencies` in your package.json. Your nodejs app is not dependent on it, but your development environment is dependent on it.
+A module installed using `-save-dev` or `-D` flags is saved as `dev-depedencies` in your package.json. Your nodejs app is not dependent on it, but your development environment is dependent on it.
 
 Testing/mocking libraries such as `mocha`, `nock` will be in dev-dependencies. Since your app does not depend on them, it should be excluded when you deploy to production.
 
